@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="fragments.js"></script>
+</head>
+    <body>
+
+        <div id="test1">
+            <button onclick="makeCollapsible('ID','test1','Test')" >Make Collapsible</button>
+            <button onclick="deleteFragment('ID')">Delete Collapsible</button>
+        </div>
+        <script>
+            makeCollapsible("ID","test1","Test")
+        </script>
+        
+
+        <div id="test2"></div>
+
+        <script>
+            var testStr = '<div id="wow"> <p> You can generate hundreds of these in a fraction of a second </p> </div>';
+            document.getElementById("test2").innerHTML = testStr;
+            document.getElementById("wow").style.cssText = 'border: 3px solid green'
+
+            var numDivs = 100,
+            fragment = document.createDocumentFragment();
+
+            while (numDivs--) {
+                var newDiv = document.createElement('div');
+                newDiv.style.cssText = 'border: 2px solid blue'
+                newDiv.innerHTML = testStr;
+
+                fragment.appendChild(newDiv);
+            }
+
+            document.getElementById("wow").appendChild(fragment);
+
+        </script>
+    </body>
+</html>
