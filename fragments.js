@@ -1,5 +1,3 @@
-//Requires jQuery
-
 //appendId is the element Id you want to append this fragment to
 function appendFragment(HTMLtoAppend, appendId) {
 
