@@ -17,8 +17,9 @@ function appendFragment(HTMLtoAppend, appendId) {
 }
 
 //delete selected fragment
-function deleteFragment(fragmentId) {
-    $('#' + fragmentId).remove(); // THIS IS A JQUERY CALL
+function deleteFragment(parentId,fragmentId) {
+    this_fragment = document.getElementById(fragmentId);
+    document.getElementById(parentId).removeChild(this_fragment);
 }
 
 //Separates the appendId from the fragmentId so you can make multiple child threads
@@ -49,7 +50,8 @@ function appendFragmentOnclickTF(HTMLtoAppend, appendId, expanded) {
         document.getElementById(appendId).appendChild(fragment);
     }
     else {
-        $('#'+appendId+'_onclick').remove();
+        this_fragment = document.getElementById(appendId+'_onclick');
+        document.getElementById(appendId).removeChild(this_fragment);
     }
 
 }
